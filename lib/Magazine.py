@@ -1,35 +1,17 @@
+
 class Magazine:
-    all_magazines = []  # This class-level list will store all magazine instances
+    all_magazines = []
 
     def __init__(self, name, category):
         self.__name = name
         self.__category = category
-        self.__articles = []  # We'll use this list to store articles associated with this magazine
-        Magazine.all_magazines.append(self)  # Add the instance to the all_magazines list
-
-    def name(self):
-        return self.__name
-
-    def category(self):
-        return self.__category
-
-    def articles(self):
-        return self.__articles
-
-    @classmethod
-    def all(cls):
-        return cls.all_magazines
-
-    # Other methods will be added later
-
-
-class Magazine:
-    # ... (previous code)
+        self.__articles = []
+        Magazine.all_magazines.append(self)
 
     def contributing_authors(self):
         authors_count = {}  # A dictionary to count the number of articles by each author
         for article in self.__articles:
-            author = article.author()
+            author = article.author()  # Assuming article has an author() method
             authors_count[author] = authors_count.get(author, 0) + 1
 
         return [author for author, count in authors_count.items() if count > 2]
@@ -46,5 +28,14 @@ class Magazine:
         for magazine in cls.all_magazines:
             titles.extend([article.title() for article in magazine.articles()])
         return titles
+
+    def name(self):
+        return self.__name
+
+    def category(self):
+        return self.__category
+
+    def articles(self):
+        return self.__articles
 
     # Other methods...

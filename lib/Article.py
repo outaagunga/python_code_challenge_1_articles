@@ -7,18 +7,9 @@ class Article:
         self.__title = title
         Article.all_articles.append(self)  # Add the instance to the all_articles list
 
+
     def title(self):
         return self.__title
-
-    @classmethod
-    def all(cls):
-        return cls.all_articles
-
-    # Other methods will be added later
-
-
-class Article:
-    # ... (previous code)
 
     def author(self):
         return self.__author
@@ -26,4 +17,8 @@ class Article:
     def magazine(self):
         return self.__magazine
 
-    # Other methods...
+    @classmethod
+    def all(cls):
+        return cls.all_articles
+
+    # Other methods can be added here...

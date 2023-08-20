@@ -5,31 +5,31 @@ import pytest
 
 # Creating instances
 def test_author_name():
-    author = Author("John Doe")
-    assert author.name() == "John Doe"
+    author = Author("Outa Agunga")
+    assert author.name() == "Outa Agunga"
 
 def test_magazine_name():
-    magazine = Magazine("Tech Magazine", "Technology")
-    assert magazine.name() == "Tech Magazine"
+    magazine = Magazine("Adventist Magazine", "Health")
+    assert magazine.name() == "Adventist Magazine"
 
 def test_article_title():
-    author = Author("John Doe")
-    magazine = Magazine("Tech Magazine", "Technology")
-    article = Article(author, magazine, "Python Basics")
-    assert article.title() == "Python Basics"
+    author = Author("Outa Agunga")
+    magazine = Magazine("Adventist Magazine", "Health")
+    article = Article(author, magazine, "Healthy")
+    assert article.title() == "Healthy"
 
 def test_author_add_article():
-    author = Author("John Doe")
-    magazine = Magazine("Tech Magazine", "Technology")
+    author = Author("Outa Agunga")
+    magazine = Magazine("Adventist Magazine", "Health")
     print("Before adding articles:", len(author.articles()), author.articles())
     
-    author.add_article(magazine, "Python Basics")
+    author.add_article(magazine, "Healthy")
     print("After adding article:", len(author.articles()), author.articles())
     
-    author.add_article(magazine, "Python Advanced")
+    author.add_article(magazine, "Vegeterian Way")
     print("After adding article:", len(author.articles()), author.articles())
    
-    author.add_article(magazine, "Python Extra")
+    author.add_article(magazine, "Natural Way")
     print("After adding article:", len(author.articles()), author.articles())
 
     assert len(author.articles()) == 3

@@ -11,7 +11,7 @@ class Magazine:
     def contributing_authors(self):
         authors_count = {}  # A dictionary to count the number of articles by each author
         for article in self.__articles:
-            author = article.author()  # Assuming article has an author() method
+            author = article.author()  
             authors_count[author] = authors_count.get(author, 0) + 1
 
         return [author for author, count in authors_count.items() if count > 2]
